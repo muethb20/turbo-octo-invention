@@ -49,6 +49,7 @@ const Header: React.FC = () => {
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>
+            <Outlet/>
         </header>
 
         <Outlet/>
