@@ -6,7 +6,8 @@ import {
     NavigationMenuList,
     NavigationMenuLink,
     navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu"; // Adjust the import according to your setup
+} from "@/components/ui/navigation-menu";
+import {Outlet} from "react-router-dom"; // Adjust the import according to your setup
 
 const Header: React.FC = () => {
     return (
@@ -40,6 +41,7 @@ const Header: React.FC = () => {
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>
+            <Outlet/>
         </header>
     );
 };

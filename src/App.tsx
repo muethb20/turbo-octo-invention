@@ -8,8 +8,10 @@ function App() {
 
   return (
        <Routes>
-            <Route path={'/'} element={<Header/>} ></Route>
-            <Route path={'/todos'} element={<TodosPage/>} ></Route>
+            <Route path={'/'} element={<Header/>} >
+                <Route path={'/todos'} element={<TodosPage/>} ></Route>
+
+            </Route>
        </Routes>
   )
 }
