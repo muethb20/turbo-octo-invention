@@ -6,10 +6,19 @@ import {
     NavigationMenuList,
     NavigationMenuLink,
     navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu"; // Adjust the import according to your setup
+} from "@/components/ui/navigation-menu";
+import {Outlet, useNavigate} from "react-router-dom"; // Adjust the import according to your setup
 
 const Header: React.FC = () => {
+
+    const nav = useNavigate();
+
+    function login() {
+        nav("/login");
+    }
+
     return (
+        <>
         <header className="border-b p-4">
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 {/* Left Side - Logo */}
@@ -33,7 +42,7 @@ const Header: React.FC = () => {
 
                         {/* Login Button */}
                         <NavigationMenuItem>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink onClick={login} className={navigationMenuTriggerStyle()}>
                                 Login
                             </NavigationMenuLink>
                         </NavigationMenuItem>
@@ -41,6 +50,9 @@ const Header: React.FC = () => {
                 </NavigationMenu>
             </div>
         </header>
+
+        <Outlet/>
+        </>
     );
 };
 
